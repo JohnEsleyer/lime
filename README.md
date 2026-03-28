@@ -47,6 +47,42 @@ func main() {
 }
 ```
 
+## 📑 API Cheatsheet
+
+### Core Objects
+| Type       | Description                                                          |
+| :--------- | :------------------------------------------------------------------- |
+| `Config`   | Video settings: `Width`, `Height`, `FPS`, `Bitrate` (quality 1-100). |
+| `Video`    | Main container. Create with `lime.New(config)`.                      |
+| `Timeline` | Manager for tracks. Accessed via `video.Timeline`.                   |
+| `Track`    | A horizontal layer in the timeline.                                  |
+| `Clip`     | Interface for drawable elements over a duration.                     |
+
+### Main Functions
+| Function                     | Description                                           |
+| :--------------------------- | :---------------------------------------------------- |
+| `lime.New(Config)`           | Creates a new Video project.                          |
+| `video.Export(path)`         | Renders and encodes the project to an MJPEG AVI file. |
+| `timeline.AddTrack()`        | Adds a new rendering layer.                           |
+| `track.AddClip(start, clip)` | Places a clip on a track at a specific start time.    |
+
+### Visual Elements
+| Function                 | Description                                 |
+| :----------------------- | :------------------------------------------ |
+| `NewCanvasClip(dur, fn)` | Uses HTML5-style canvas API for drawing.    |
+| `NewShaderClip(dur, fn)` | High-performance per-pixel software shader. |
+
+### Common Drawing (via `gg.Context`)
+| Function                    | Description                                             |
+| :-------------------------- | :------------------------------------------------------ |
+| `dc.SetHexColor(hex)`       | Sets drawing color from a hex string (e.g., "#FF0000"). |
+| `dc.DrawRectangle(x,y,w,h)` | Defines a rectangular path.                             |
+| `dc.DrawCircle(x,y,r)`      | Defines a circular path.                                |
+| `dc.Fill()`                 | Fills the current path with the current color.          |
+| `dc.Stroke()`               | Outlines the current path with the current color.       |
+| `dc.DrawString(s,x,y)`      | Draws text at the specified location.                   |
+| `dc.Clear()`                | Clears the entire canvas with the current color.        |
+
 ## 🧠 Why Pure Go?
 
 Most video libraries are wrappers around FFmpeg or C-based engines. Lime is different:
