@@ -15,7 +15,7 @@ Lime is a high-performance, pure-Go video editing and generation library. Inspir
 ### Installation
 
 ```bash
-go get github.com/user/lime
+go get github.com/johnesleyer/lime
 ```
 
 ### Basic Example
@@ -25,7 +25,7 @@ package main
 
 import (
 	"github.com/fogleman/gg"
-	"github.com/user/lime"
+	"github.com/johnesleyer/lime"
 )
 
 func main() {

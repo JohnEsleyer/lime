@@ -4,7 +4,7 @@ import (
 	"image/color"
 	"log"
 
-	"github.com/user/lime"
+	"github.com/johnesleyer/lime"
 )
 
 func main() {

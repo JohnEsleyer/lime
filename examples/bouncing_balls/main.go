@@ -5,7 +5,7 @@ import (
 	"math"
 
 	"github.com/fogleman/gg"
-	"github.com/user/lime"
+	"github.com/johnesleyer/lime"
 )
 
 type Ball struct {

@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/fogleman/gg"
-	"github.com/user/lime"
+	"github.com/johnesleyer/lime"
 )
 
 func main() {

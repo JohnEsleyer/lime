@@ -6,7 +6,7 @@ import (
 
 	"github.com/fogleman/gg"
 	"github.com/golang/freetype/truetype"
-	"github.com/user/lime"
+	"github.com/johnesleyer/lime"
 	"golang.org/x/image/font/gofont/gobold"
 )
 

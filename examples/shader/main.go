@@ -5,7 +5,7 @@ import (
 	"log"
 	"math"
 
-	"github.com/user/lime"
+	"github.com/johnesleyer/lime"
 )
 
 func main() {

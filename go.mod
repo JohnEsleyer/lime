@@ -1,4 +1,4 @@
-module github.com/user/lime
+module github.com/johnesleyer/lime
 
 go 1.25.0
 
