@@ -1,0 +1,23 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output files
+*.avi
+*.mp4
+
+# IDE files
+.idea/
+.vscode/
+
+# Dependency directories (only if you use vendor)
+vendor/
+
+# Go environment files
+.env
