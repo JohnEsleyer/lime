@@ -21,3 +21,4 @@ vendor/
 
 # Go environment files
 .env
+dev-journal/

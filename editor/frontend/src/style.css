@@ -1,152 +1,133 @@
-html, body {
+:root {
+    font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #000000;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
     margin: 0;
-    padding: 0;
-    height: 100vh;
-    background-color: #0f111a;
-    color: #e2e8f0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
     overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    background-color: #000000;
 }
 
 #app {
-    display: flex;
-    flex-direction: column;
+    width: 100%;
     height: 100vh;
 }
 
-.topbar {
-    height: 60px;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    justify-content: space-between;
+* {
+    box-sizing: border-box;
 }
 
-.topbar .title {
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: #4ade80; /* Lime green */
-    letter-spacing: 1px;
-}
-
-.workspace {
-    display: flex;
-    flex: 1;
-    overflow: hidden;
-}
-
-.panel {
-    background: rgba(255, 255, 255, 0.02);
-    border-right: 1px solid rgba(255, 255, 255, 0.05);
-    display: flex;
-    flex-direction: column;
-}
-
-.media-bin, .inspector {
-    width: 250px;
-    padding: 15px;
-}
-
-.player {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: #0a0b10;
-}
-
-.preview-container {
-    background: #000;
-    aspect-ratio: 16/9;
-    width: 100%;
-    max-width: 800px;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    overflow: hidden;
-    position: relative;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.preview-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.timeline {
-    height: 250px;
-    background: rgba(255, 255, 255, 0.03);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    display: flex;
-    flex-direction: column;
-}
-
-.timeline-header {
-    height: 30px;
-    background: rgba(255, 255, 255, 0.05);
-    display: flex;
-    align-items: center;
-    padding: 0 15px;
-    font-size: 0.8rem;
-    color: #94a3b8;
-}
-
-.tracks {
-    flex: 1;
-    padding: 10px 0;
-    overflow-y: auto;
-}
-
-.track {
-    height: 48px;
-    background: rgba(255, 255, 255, 0.01);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.clip {
-    position: absolute;
-    height: 80%;
-    border-radius: 4px;
-    color: #000;
-    font-size: 0.75rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    padding: 0 8px;
-    cursor: grab;
-    top: 10%;
-}
-
+/* Global Button Styles */
 .btn {
-    background: #4ade80;
-    color: #000;
-    border: none;
     padding: 8px 16px;
-    border-radius: 4px;
+    border-radius: 6px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
 }
 
 .btn:hover {
-    background: #22c55e;
-    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.1);
 }
 
-h3 {
-    margin-top: 0;
-    font-size: 0.9rem;
-    color: #cbd5e1;
-    text-transform: uppercase;
+.btn-primary {
+    background: #a3e635;
+    color: #0f172a;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #bef264;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #262626;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #404040;
+}
+
+/* Main Layout Styles */
+.topbar {
+    height: 48px;
+    background: #111111;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    z-index: 100;
+}
+
+.topbar .title {
+    font-weight: 800;
+    color: #a3e635;
     letter-spacing: 1px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding-bottom: 8px;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.main-editor {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.upper-panels {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+}
+
+/* Override range slider defaults for a cleaner look */
+input[type="range"] {
+    accent-color: #a3e635;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
